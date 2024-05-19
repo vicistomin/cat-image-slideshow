@@ -1,0 +1,13 @@
+import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/query';
+import { catsApi } from './services/catsApi.ts';
+
+export const store = configureStore({
+  reducer: {
+    [catsApi.reducerPath]: catsApi.reducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(catsApi.middleware),
+});
+
+setupListeners(store.dispatch);
