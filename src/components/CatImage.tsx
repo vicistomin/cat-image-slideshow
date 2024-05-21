@@ -1,28 +1,30 @@
-import { FC } from 'react';
-import { useGetRandomCatQuery } from '../services/catsApi';
+import { FC, ImgHTMLAttributes } from 'react';
+import { useGetCatsQuery } from '../services/catsApi';
 
-const CatImage: FC = () => {
-  const { data, error, isLoading, isFetching, refetch } =
-    useGetRandomCatQuery();
+type CatImageProps = {
+  imageIndex?: number;
+} & ImgHTMLAttributes<HTMLImageElement>;
 
-  if (error) return <>Oh no, there was an error</>;
+const CatImage: FC<CatImageProps> = (props) => {
+  const { imageIndex, ...imageProps } = props;
+
+  const { data, error, isLoading, isFetching } = useGetCatsQuery(10);
+
+  const currentImage = data?.[imageIndex ?? 0];
+
+  if (error || !currentImage?.url) return <>Oh no, there was an error</>;
 
   if (isLoading || isFetching) return <>Loading...</>;
 
-  const randomCat = data?.[0];
-
   return (
-    <div className="card">
-      <button onClick={refetch}>Get another</button>
-      {randomCat && (
-        <img
-          src={randomCat.url}
-          alt="random cat image"
-          width={800}
-          height={400}
-        />
-      )}
-    </div>
+    <img
+      src={currentImage.url}
+      alt="cat image"
+      // loading="lazy"
+      width={800}
+      height={400}
+      {...imageProps}
+    />
   );
 };
 
