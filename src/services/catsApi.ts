@@ -1,20 +1,26 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { Cat } from 'types';
 
-const baseUrl = import.meta.env?.['VITE_CATS_API_URL'] || '/';
+const apiUrl = import.meta.env?.['VITE_CATS_API_URL'] || '/';
+const baseUrl = `${apiUrl}/images/search`;
 
 export const catsApi = createApi({
   reducerPath: 'catsApi',
   baseQuery: fetchBaseQuery({ baseUrl }),
   endpoints: (builder) => ({
     getRandomCat: builder.query<Cat[], void>({
-      query: () => `images/search`,
+      query: () => ({
+        url: '',
+      }),
     }),
     getCats: builder.query<Cat[], number>({
-      query: (
-        // Only 10 max is available
-        limit
-      ) => `images/search?limit=${limit}`,
+      query: (limit) => ({
+        url: '',
+        params: {
+          // Only 10 max is available
+          limit: `${limit}`,
+        },
+      }),
     }),
   }),
 });
