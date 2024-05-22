@@ -4,3 +4,5 @@ export type Cat = {
   width: number;
   height: number;
 };
+
+export type EmptyHandler = () => void;

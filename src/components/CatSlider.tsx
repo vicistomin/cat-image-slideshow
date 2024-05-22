@@ -26,7 +26,11 @@ const CatSlider: FC = () => {
           {'<'}
         </button>
         <div className="slider-content">
-          <SliderContent currentIndex={currentIndex} />
+          <SliderContent
+            currentIndex={currentIndex}
+            onPrevImage={handlePrev}
+            onNextImage={handleNext}
+          />
         </div>
         <button onClick={() => handleNext()} className="right-button">
           {'>'}
