@@ -18,7 +18,9 @@
 
 .slider-wrapper {
     width: calc(100vw - 4rem);
-    height: calc(100vh - 260px);
+    height: calc(100vh - 280px);
+    max-width: 1280px;
+    max-height: 960px;
     display: flex;
     justify-content: center;
 }
@@ -34,7 +36,8 @@
     position: relative;
     right: 0;
     max-width: 100%;
-    height: calc(100vh - 260px);
+    height: calc(100vh - 280px);
+    max-height: 960px;
     width: 100%;
     cursor: pointer;
 }
@@ -58,9 +61,23 @@
 }
 
 .cta-button {
-    background: linear-gradient(90deg, #8FC7FF 0%, #FF7BAA 100%);
-    border-color: #9b58c2;
+    background: linear-gradient(90deg, #8fc7ff 0%, #d566fb 100%);
+    border-color: #5251a9;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.slider-dots-container {
+    display: flex;
+    justify-content: center;
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #5251a9;
+    margin: 0 5px;
+    transition: width 0.5s ease 0s;
 }
