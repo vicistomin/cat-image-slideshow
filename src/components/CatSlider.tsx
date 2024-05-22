@@ -20,7 +20,9 @@ const CatSlider: FC = () => {
 
   return (
     <div className="card">
-      <button onClick={() => refetch()}>Get new images</button>
+      <button onClick={() => refetch()} className="cta-button">
+        Get new images
+      </button>
       <div className="slider-wrapper">
         <button onClick={() => handlePrev()} className="left-button">
           <img src="/chevron.svg" alt="previous image" width={40} height={40} />

@@ -15,10 +15,10 @@ const SliderContent: FC<SliderContentProps> = (props) => {
   const { data, error, isLoading, isFetching } = useGetCatsQuery(10);
 
   // TODO: Add error Alert with icon
-  if (error) return <>Oh no, there was an error</>;
+  if (error) return <h2>Oh no, there was an error</h2>;
   // TODO: Add spinning loader icon
-  if (isLoading || isFetching) return <>Loading...</>;
-  if (!data || data?.length === 0) return <>No images</>;
+  if (isLoading || isFetching) return <h2>Loading...</h2>;
+  if (!data || data?.length === 0) return <h2>No images</h2>;
 
   return data.map((cat, index) => (
     <CatImage
