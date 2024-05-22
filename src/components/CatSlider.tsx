@@ -36,6 +36,7 @@ const CatSlider: FC = () => {
           <img src="/chevron.svg" alt="next image" width={40} height={40} />
         </button>
       </div>
+      {/* TODO: Add clickable dots below */}
     </div>
   );
 };
