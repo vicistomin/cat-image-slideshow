@@ -23,7 +23,7 @@ const CatSlider: FC = () => {
       <button onClick={() => refetch()}>Get new images</button>
       <div className="slider-wrapper">
         <button onClick={() => handlePrev()} className="left-button">
-          {'<'}
+          <img src="/chevron.svg" alt="previous image" width={40} height={40} />
         </button>
         <div className="slider-content">
           <SliderContent
@@ -33,7 +33,7 @@ const CatSlider: FC = () => {
           />
         </div>
         <button onClick={() => handleNext()} className="right-button">
-          {'>'}
+          <img src="/chevron.svg" alt="next image" width={40} height={40} />
         </button>
       </div>
     </div>

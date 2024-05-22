@@ -41,8 +41,18 @@
 
 .left-button {
     border-radius: 10px 0 0 10px;
+    padding: 6px;
+}
+
+.left-button img {
+    transform: rotate(90deg);
 }
 
 .right-button {
     border-radius: 0 10px 10px 0;
+    padding: 6px;
+}
+
+.right-button img {
+    transform: rotate(270deg);
 }

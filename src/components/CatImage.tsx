@@ -60,7 +60,7 @@ const CatImage: FC<CatImageProps> = (props) => {
   const top = useMemo<string>(() => {
     if (imageIndex === 0) return '0';
     if (imageIndex === 1 && !isPrev) return '-100%';
-    if (imageIndex === lastImageIndex - 1 ?? !isNext) return '-100%';
+    if (imageIndex === lastImageIndex - 1 && !isNext) return '-100%';
     if (imageIndex === lastImageIndex) return '-200%';
 
     if (isPrev) return '0';
