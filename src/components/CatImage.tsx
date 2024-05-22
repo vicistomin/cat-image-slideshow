@@ -57,7 +57,6 @@ const CatImage: FC<CatImageProps> = (props) => {
       height={400}
       style={{
         display: isDisplayed ? 'block' : 'none',
-        position: 'relative',
         left,
         top,
         right: 0,

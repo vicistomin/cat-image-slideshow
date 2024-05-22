@@ -22,11 +22,15 @@ const CatSlider: FC = () => {
     <div className="card">
       <button onClick={() => refetch()}>Get new images</button>
       <div className="slider-wrapper">
-        <button onClick={() => handlePrev()}>{'<'}</button>
+        <button onClick={() => handlePrev()} className="left-button">
+          {'<'}
+        </button>
         <div className="slider-content">
           <SliderContent currentIndex={currentIndex} />
         </div>
-        <button onClick={() => handleNext()}>{'>'}</button>
+        <button onClick={() => handleNext()} className="right-button">
+          {'>'}
+        </button>
       </div>
     </div>
   );

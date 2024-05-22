@@ -1,8 +1,10 @@
 #root {
-    width: 100vw;
-    height: 100vh;
     min-width: 320px;
-    margin: 0 auto;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+.layout {
     padding: 2rem;
     text-align: center;
 }
@@ -15,23 +17,32 @@
 }
 
 .slider-wrapper {
-    width: 90vw;
-    height: 400px;
+    width: calc(100vw - 4rem);
+    height: calc(100vh - 260px);
     display: flex;
-    flex-direction: row;
+    justify-content: center;
 }
 
 .slider-content {
     width: 100%;
-    height: 100%;
-    align-self: center;
+    align-content: center;
     overflow: hidden;
 }
 
 .slider-content img {
-    width: auto;
+    object-fit: cover;
+    position: relative;
+    right: 0;
     max-width: 100%;
-    height: 400px;
-    margin: 0 auto;
-    transition: left 500ms ease;
+    height: calc(100vh - 260px);
+    width: 100%;
+    cursor: pointer;
+}
+
+.left-button {
+    border-radius: 10px 0 0 10px;
+}
+
+.right-button {
+    border-radius: 0 10px 10px 0;
 }
