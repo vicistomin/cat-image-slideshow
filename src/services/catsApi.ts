@@ -1,5 +1,5 @@
+import { Cat } from '@/types';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Cat } from 'types';
 
 const apiUrl = import.meta.env?.['VITE_CATS_API_URL'] || '/';
 const baseUrl = `${apiUrl}/images/search`;

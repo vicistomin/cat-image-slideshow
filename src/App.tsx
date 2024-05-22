@@ -1,5 +1,5 @@
-import './App.css';
-import CatSlider from './components/CatSlider.tsx';
+import '@/App.css';
+import CatSlider from '@/components/CatSlider.tsx';
 
 function App() {
   return (

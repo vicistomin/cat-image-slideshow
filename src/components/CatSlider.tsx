@@ -1,6 +1,6 @@
+import SliderContent from '@/components/SliderContent.tsx';
+import { useGetCatsQuery } from '@/services/catsApi.ts';
 import { FC, useState } from 'react';
-import { useGetCatsQuery } from '../services/catsApi';
-import CatImage from './CatImage.tsx';
 
 const CatSlider: FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -23,16 +23,9 @@ const CatSlider: FC = () => {
       <button onClick={() => refetch()}>Get new images</button>
       <div className="slider-wrapper">
         <button onClick={() => handlePrev()}>{'<'}</button>
-        {data && data?.length > 0
-          ? data.map((cat, index) => (
-              <div
-                key={cat.id}
-                style={{ display: index === currentIndex ? 'block' : 'none' }}
-              >
-                <CatImage imageIndex={index} />
-              </div>
-            ))
-          : 'No images'}
+        <div className="slider-content">
+          <SliderContent currentIndex={currentIndex} />
+        </div>
         <button onClick={() => handleNext()}>{'>'}</button>
       </div>
     </div>
