@@ -81,3 +81,22 @@
     margin: 0 5px;
     transition: width 0.5s ease 0s;
 }
+
+@media (max-width: 769px) {
+    .left-button, .right-button {
+        position: absolute;
+        height: 54px;
+        align-self: center;
+        border-radius: 50%;
+        background: #242424bf;
+        z-index: 99;
+    }
+
+    .left-button {
+        left: 2.4rem;;
+    }
+
+    .right-button {
+        right: 2.4rem;;
+    }
+}
